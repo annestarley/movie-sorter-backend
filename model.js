@@ -34,7 +34,13 @@ const getMovieByGenre = (genre) => {
   }
 }
 
+const getAllMovies = () => {
+  return knex('movies')
+    .returning('*')
+}
+
 module.exports = {
   createMovie,
-  getMovieByGenre
+  getMovieByGenre,
+  getAllMovies
 }

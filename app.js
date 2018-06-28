@@ -9,6 +9,7 @@ app.disable('x-powered-by')
 
 const controller = require('./controller')
 
+app.get('/allMovies', controller.getAllMoviesController)
 app.get('/:genre', controller.getMovieByGenreController)
 app.post('/createMovie', controller.movieCreaterController)
 

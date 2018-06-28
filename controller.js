@@ -24,7 +24,18 @@ const getMovieByGenreController = (req, res, next) => {
     })
 }
 
+const getAllMoviesController = (req, res, next) => {
+  model.getAllMovies()
+    .then(results => {
+      res.json(results)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
 module.exports = {
   movieCreaterController,
-  getMovieByGenreController
+  getMovieByGenreController,
+  getAllMoviesController
 }
