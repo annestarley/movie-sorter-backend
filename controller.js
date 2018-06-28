@@ -7,8 +7,24 @@ const movieCreaterController = (req, res, next) => {
     .then(movie => {
       res.status(201).json(movie)
     })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+const getMovieByGenreController = (req, res, next) => {
+  let genre = req.params.genre
+
+  model.getMovieByGenre(genre)
+    .then(results => {
+      res.json(results)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 module.exports = {
-  movieCreaterController
+  movieCreaterController,
+  getMovieByGenreController
 }
