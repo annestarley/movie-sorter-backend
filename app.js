@@ -7,7 +7,9 @@ app.use(bodyParser.json())
 
 app.disable('x-powered-by')
 
+const controller = require('./controller')
 
+app.post('/createMovie', controller.movieCreaterController)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
